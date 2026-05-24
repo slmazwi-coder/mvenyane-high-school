@@ -33,8 +33,8 @@ export const About = () => {
             viewport={{ once: true }}
             className="flex flex-col justify-center"
           >
-            <div className="border-l-4 border-[#c9a84c] pl-5 mb-6">
-              <h2 className="text-2xl font-bold text-[#0f1f4b]">Our School</h2>
+            <div className="border-l-4 border-school-green pl-5 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">Our School</h2>
             </div>
             <div className="space-y-4 text-gray-600 leading-relaxed text-base">
               {data.historyParagraphs.map((p, i) => (
@@ -82,18 +82,18 @@ export const About = () => {
         >
           {/* Section heading */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-[#0f1f4b] mb-2">Principal's Message</h2>
-            <div className="w-16 h-1 bg-[#c9a84c] mx-auto rounded-full" />
+            <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Principal's Message</h2>
+            <div className="w-16 h-1 bg-school-green mx-auto rounded-full" />
           </div>
 
           {/* Card */}
-          <div className="bg-[#f4f6fb] rounded-3xl overflow-hidden shadow-lg border border-[#dde3f0]">
+          <div className="bg-green-50 rounded-3xl overflow-hidden shadow-lg border border-green-100">
             <div className="grid grid-cols-1 md:grid-cols-3">
 
               {/* Principal Photo Column */}
-              <div className="flex flex-col items-center justify-center bg-[#0f1f4b] p-8 md:p-10">
+              <div className="flex flex-col items-center justify-center bg-school-green p-8 md:p-10">
                 {/* Photo frame */}
-                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#c9a84c] shadow-xl mb-5">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#4D913D] shadow-xl mb-5">
                   {!principalFailed ? (
                     <img
                       src={principalImageUrl}
@@ -102,7 +102,7 @@ export const About = () => {
                       onError={() => setPrincipalFailed(true)}
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-[#1a2e5a]">
+                    <div className="w-full h-full flex items-center justify-center bg-[#0D4904]">
                       <ImageIcon className="text-white/40" size={40} />
                     </div>
                   )}
@@ -112,18 +112,18 @@ export const About = () => {
                 <h3 className="text-lg font-bold text-white text-center leading-tight">
                   {data.principalName}
                 </h3>
-                <p className="text-[#c9a84c] text-sm font-semibold mt-1 text-center">
+                <p className="text-[#4D913D] text-sm font-semibold mt-1 text-center">
                   {data.principalTitle}
                 </p>
 
                 {/* Decorative divider */}
-                <div className="w-10 h-0.5 bg-[#c9a84c] mt-4 rounded-full opacity-60" />
+                <div className="w-10 h-0.5 bg-[#4D913D] mt-4 rounded-full opacity-60" />
               </div>
 
               {/* Message Column */}
               <div className="col-span-2 flex flex-col justify-center p-8 md:p-12">
                 {/* Opening quote mark — decorative only, not wrapping text */}
-                <div className="text-[#c9a84c] text-6xl font-serif leading-none mb-2 opacity-40 select-none">
+                <div className="text-school-green text-6xl font-serif leading-none mb-2 opacity-40 select-none">
                   "
                 </div>
 
@@ -134,7 +134,7 @@ export const About = () => {
                 </div>
 
                 {/* Closing quote mark — decorative only */}
-                <div className="text-[#c9a84c] text-6xl font-serif leading-none mt-2 text-right opacity-40 select-none">
+                <div className="text-school-green text-6xl font-serif leading-none mt-2 text-right opacity-40 select-none">
                   "
                 </div>
               </div>
