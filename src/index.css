@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-school-green: #0B1F3B;
+  --color-school-white: #ffffff;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html, body, #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.glass-nav {
+  @apply bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 w-full;
+}
+
+.btn-primary {
+  @apply bg-school-green text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#081529] transition-colors;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-school-green mb-8 text-center;
+}
+
+.card {
+  @apply bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow;
+}
+
+/* Ensure pages stretch full width */
+main {
+  width: 100%;
+  flex: 1;
+}

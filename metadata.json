@@ -1,0 +1,7 @@
+{
+  "name": "Mvenyane Senior Secondary School",
+  "description": "Mvenyane SSS is a public boarding school based in Mvenyane A/A, Cedarville, Eastern Cape.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

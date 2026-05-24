@@ -1,0 +1,49 @@
+name: 🚀 Deploy School Website
+on:
+  push:
+    branches:
+      - main
+jobs:
+  web-deploy:
+    name: 🎉 Build and Sync Files
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - name: ⚙️ Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: 📦 Install dependencies
+      run: npm install
+
+    - name: 🔑 Create .env file
+      run: |
+        echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
+        echo "VITE_GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+        echo "VULAVULA_API_KEY=${{ secrets.VULAVULA_API_KEY }}" >> .env
+        echo "VITE_VULAVULA_API_KEY=${{ secrets.VULAVULA_API_KEY }}" >> .env
+        echo "APP_URL=https://mthargreavessss.co.za" >> .env
+        cat .env | sed 's/=.*/=***/'
+
+    - name: 🏗️ Build project
+      run: npm run build
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        VULAVULA_API_KEY: ${{ secrets.VULAVULA_API_KEY }}
+        VITE_VULAVULA_API_KEY: ${{ secrets.VULAVULA_API_KEY }}
+
+    - name: 📂 Sync files to Host Africa
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: public_html/
+        port: 21
+        protocol: ftp
+        local-dir: ./dist/
+        dangerous-clean-slate: true
