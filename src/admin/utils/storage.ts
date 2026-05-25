@@ -304,10 +304,10 @@ export const setApplications = (items: Application[]) => setItems('admin_applica
 
 // Contact
 const defaultContact: ContactInfo = {
-  address: 'Mvenyane A/A, Cedarville, 4735 (Eastern Cape)',
-  phone: '082 768 8305 / 082 083 7333',
+  address: 'Private Bag x515, Cedarville 4720 — Mvenyane A/A, Rural Matatiele, Cedarville 4720',
+  phone: '082 083 7333 (Main) / 082 768 8305 (Admissions)',
   emailPrincipal: 'principal@mvenyanehighschool.com',
-  emailAdmin: 'admin@mvenyanehighschool.com',
+  emailAdmin: '200500810@ecschools.org.za',
   emailHostelAdmin: 'hostel@mvenyanehighschool.com',
   monThu: '07:30 - 15:30',
   friday: '07:30 - 13:30',
@@ -319,15 +319,15 @@ export const setContact = (info: ContactInfo) => setObject('admin_contact', info
 // About
 const defaultAbout: AboutInfo = {
   historyParagraphs: [
-    'Mvenyane Senior Secondary School is a public boarding school serving learners in and around Mvenyane A/A (Cedarville, Eastern Cape).',
-    'The school is committed to disciplined learning, community values, and strong academic outcomes.',
-    'Parents and guardians are encouraged to engage with the school through meetings, events, and ongoing learner support.',
+    'Mvenyane High School is a rural school that was established by the Moravian church in 1901. For many years it was a teacher training school. When the training school for teachers was moved to Maluti, it became a high school to date.',
+    'It has a State hostel for girls, consequently it has a high enrollment of girls. The school has an enrollment of over 1 300 learners, with a staff complement of 36 educators — 1 Principal, 2 Deputy Principals, 5 HODs, and 28 PL1 educators, along with administrative and support staff.',
+    'The school is located at Mvenyane A/A, in the rural area of Cedarville (Matatiele), Eastern Cape. We are committed to providing quality education that leads to independent thinking, self-confidence, and responsible citizenship.',
   ],
-  principalName: 'Principal',
+  principalName: 'Ms. S.N. Basiwe',
   principalTitle: 'Principal',
   principalMessage: [
-    'Welcome to Mvenyane Senior Secondary School. We believe every learner can achieve with consistent effort, good support, and a strong learning environment.',
-    'Education is the key to success. We value respect, responsibility, and pride in our school community.',
+    'We believe in cultivating and supporting our learners. Challenging every student to his/her highest potential. Partnering with home, school and community for students\' success.',
+    'We acknowledge that students must share in the responsibility of learning. We are committed to preparing students to be contributing citizens in the 21st century, and providing a safe, nurturing and orderly environment as an essential part of learning.',
   ],
 };
 export const getAbout = () => getObject<AboutInfo>('admin_about', defaultAbout);
