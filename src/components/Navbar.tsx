@@ -34,7 +34,7 @@ export const Navbar = () => {
                 <img
                   src="./assets/logo.png"
                   alt="Mvenyane SSS logo"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain p-0.5"
                 />
               </div>
               <div className="min-w-0">
