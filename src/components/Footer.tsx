@@ -17,7 +17,7 @@ export const Footer = () => {
                 <img
                   src="./assets/logo.png"
                   alt="Mvenyane SSS logo"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div>
@@ -28,12 +28,10 @@ export const Footer = () => {
               </div>
             </div>
 
-            <p className="text-white/60 text-xs mt-2">EMIS: 200500810</p>
-
             {/* Social icons */}
             <div className="flex gap-3 mt-4">
               <a
-                href="https://www.facebook.com/Mvenyanehigh"
+                href="https://www.facebook.com/MvenyaneSSSOfficial/"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
@@ -52,23 +50,15 @@ export const Footer = () => {
             <ul className="space-y-3 text-white/80 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="shrink-0 mt-0.5" size={16} />
-                <span>Private Bag x515, Cedarville 4720<br />Mvenyane A/A, Rural Matatiele</span>
+                <span>Mvenyane A/A, Cedarville, 4735 (Eastern Cape)</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0" />
-                <span>082 083 7333 <span className="text-white/50 text-xs">(Main)</span></span>
+                <span>082 768 8305</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0" />
-                <span>082 768 8305 <span className="text-white/50 text-xs">(Admissions)</span></span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={16} className="shrink-0" />
-                <span>073 577 8934 <span className="text-white/50 text-xs">(Management)</span></span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={16} className="shrink-0" />
-                <span>079 146 8203 <span className="text-white/50 text-xs">(Management)</span></span>
+                <span>082 083 7333</span>
               </li>
             </ul>
           </div>
@@ -82,24 +72,24 @@ export const Footer = () => {
               <li className="flex items-start gap-2">
                 <Mail size={16} className="shrink-0 mt-0.5 text-white/80" />
                 <div>
-                  <p className="text-white/50 text-xs uppercase tracking-wide font-semibold mb-0.5">School (EMIS)</p>
-                  <a
-                    href="mailto:200500810@ecschools.org.za"
-                    className="text-white/80 hover:text-white transition-colors break-all"
-                  >
-                    200500810@ecschools.org.za
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail size={16} className="shrink-0 mt-0.5 text-white/80" />
-                <div>
                   <p className="text-white/50 text-xs uppercase tracking-wide font-semibold mb-0.5">Principal</p>
                   <a
                     href="mailto:principal@mvenyanehighschool.com"
                     className="text-white/80 hover:text-white transition-colors break-all"
                   >
                     principal@mvenyanehighschool.com
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail size={16} className="shrink-0 mt-0.5 text-white/80" />
+                <div>
+                  <p className="text-white/50 text-xs uppercase tracking-wide font-semibold mb-0.5">Admin</p>
+                  <a
+                    href="mailto:admin@mvenyanehighschool.com"
+                    className="text-white/80 hover:text-white transition-colors break-all"
+                  >
+                    admin@mvenyanehighschool.com
                   </a>
                 </div>
               </li>
@@ -118,7 +108,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Col 4 — School Hours + Fees */}
+          {/* Col 4 — School Hours */}
           <div>
             <h4 className="text-sm font-bold mb-4 border-b border-white/20 pb-2 uppercase tracking-wide">
               School Hours

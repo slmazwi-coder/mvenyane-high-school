@@ -323,7 +323,7 @@ export const Boarding = () => {
   const [learner, setL] = useState({
     surnameAndName: '',
     homeAddress: '',
-    schoolNameAndAddress: 'Mvenyane SSS, Mvenyane A/A, Cedarville 4720 (Girls Hostel)',
+    schoolNameAndAddress: 'Mvenyane SSS, Mvenyane A/A, Cedarville 4735',
     currentGrade: '',
     gender: '',
     healthStatus: 'good' as 'good' | 'fair' | 'bad',

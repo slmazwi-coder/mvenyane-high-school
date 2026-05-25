@@ -140,41 +140,25 @@ const SYSTEM_PROMPT = `You are a warm, knowledgeable and friendly assistant for 
 You help parents, learners, guardians and community members with anything about the school:
 - Admissions and application process (general and boarding)
 - Required documents for applications
-- Boarding / hostel information and fees
-- School fees, payment details and banking information
+- Boarding / hostel information
+- School fees, payment and financial assistance
 - School hours and term dates
 - Staff, departments and contact information
 - Academic results, achievements and activities
 - Sports, culture and extra-curricular programs
-- Uniform information and where to buy
 - Student welfare and support services
 - General encouragement and guidance for parents and learners
 
 School details:
-- Name: Mvenyane Senior Secondary School (Mvenyane SSS)
-- EMIS: 200500810
-- Established: 1901 by the Moravian Church (originally a teacher training school)
-- Location: Mvenyane A/A, Rural Matatiele, Cedarville 4720, Eastern Cape
-- Postal: Private Bag x515, Cedarville 4720
-- Phone Main: 082 083 7333
-- Phone Admissions: 082 768 8305
-- Phone Management 1: 073 577 8934
-- Phone Management 2: 079 146 8203
-- Email: 200500810@ecschools.org.za
+- Name: Mvenyane Senior Secondary School
+- Location: Mvenyane A/A, Cedarville, 4735 (Eastern Cape)
+- Phone: 082 768 8305 / 082 083 7333
 - Website: www.mvenyanehighschool.com
-- Facebook: facebook.com/Mvenyanehigh
 - Motto: "Education is the key to success"
-- Principal: Ms. S.N. Basiwe
 - School hours: Monday–Thursday 07:30–15:30, Friday 07:30–13:30
 - Grades: Grade 8 to Grade 12
-- Enrollment: Over 1,300 learners
-- Staff: 36 educators (1 Principal, 2 Deputy Principals, 5 HODs, 28 PL1 educators)
-- Boarding: State hostel for GIRLS ONLY
-- Boarding fees (ABSA Kokstad, Cheque Account 4076523383): Term 1 R1,400, Term 2 R1,300, Term 3 R1,300 = Total R4,000/year
-- Donation (Standard Bank, Account 062233564): Grade 10-12 R1,050/year, Grade 8-9 R750/year (for SGB educators, guard, music, sport)
-- Indemnity for all learners: R300
-- Uniform: Girls — green and gold (from Elegant Man), black shoes. Boys — gold shirts (R200), grey trouser (Student Prince only), black shoes. School blazer R680 (from school). T-shirt R200 (from school). Jackets R420.
-- 2026 admissions are CLOSED. 2027 applications are currently OPEN.
+- The school has boarding facilities (hostel) available.
+- 2026 admissions are CLOSED. 2027 applications are currently OPEN for both general and boarding admissions.
 
 Be warm, clear and concise. Always encourage. If you are unsure about something very specific, direct them to call or email the school.`;
 
@@ -186,7 +170,7 @@ async function askGemini(userMessage: string): Promise<string> {
 
   if (!apiKey) {
     console.warn('[Chatbot] GEMINI_API_KEY not configured');
-    return 'The assistant is not configured yet. Please contact the school directly at 082 083 7333 or 200500810@ecschools.org.za.';
+    return 'The assistant is not configured yet. Please contact the school directly at 082 768 8305 or admin@mvenyanehighschool.com.';
   }
 
   const models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash'];
@@ -209,12 +193,12 @@ async function askGemini(userMessage: string): Promise<string> {
     } catch (err: any) {
       console.error(`[Chatbot] Gemini (${model}) failed:`, err?.message || err);
       if (err?.message?.includes('API key') || err?.status === 403) {
-        return 'The assistant is temporarily unavailable. Please contact the school directly at 082 083 7333 or 200500810@ecschools.org.za.';
+        return 'The assistant is temporarily unavailable. Please contact the school directly at 082 768 8305 or admin@mvenyanehighschool.com.';
       }
     }
   }
 
-  return 'I\'m having trouble connecting right now. Please contact the school directly at 082 083 7333 or 200500810@ecschools.org.za.';
+  return 'I\'m having trouble connecting right now. Please contact the school directly at 082 768 8305 or admin@mvenyanehighschool.com.';
 }
 
 // ── Main ChatbotWidget ───────────────────────────────────────────────────────
@@ -327,7 +311,7 @@ export function ChatbotWidget(props: { defaultOpen?: boolean }) {
         {
           id: uid(),
           role: 'bot',
-          text: 'Something went wrong. Please contact the school at 082 083 7333.',
+          text: 'Something went wrong. Please contact the school at 082 768 8305.',
           createdAt: Date.now(),
         },
       ]);
